@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/denglu.css">
+    <link rel="stylesheet" href="css/tp1.css"/>
+
+</head>
+<body>
+    <div id="bk">
+        <div>
+            <div class="t2">
+                <a href="index.html">网易云音乐</a>
+            </div>
+            <div class="container">
+                <div class="w1">
+                    <a href="index.html">发现音乐</a>
+                </div>
+            </div>
+            <div class="w2">
+                <span><a href="wdyy.html">我的音乐</a></span>
+            </div>
+            <div class="w3">
+                <span><a href="pengyou.html">朋友</a></span>
+            </div>
+            <div class="w4">
+                <span><a href="">商城</a></span>
+            </div>
+            <div class="w5">
+                <span><a href="">音乐人</a></span>
+            </div>
+            <div class="w6">
+                     <span>
+                         <a href="">下载客户端</a>
+                        <div class="t3"></div>
+                     </span>
+            </div>
+            <div class="k1">
+                <input type="text" placeholder="音乐/视频/电台/用户">
+                    <span>
+                   <a href=""><div class="t4"></div></a>
+                    </span>
+            </div>
+            <div class="k2">
+                <a href="">创作者中心</a>
+            </div>
+            <div class="dl">
+                <a data-target="#mymodal" data-toggle="modal" href="">登陆</a>
+                <div  id="mymodal" class="modal mt-100">
+                    <div class="modal-dialog">
+                        <div class="modal-content ">
+                            <div class="modal-header h-25 p-0 bg-back">
+                                <h6 class="text-whild text-center mt-2 ml-2">登陆</h6>
+                                <button data-dismiss="modal" class="close mr-2">&times;</button>
+                            </div>
+                            <div class="modal-body dltu">
+                                <img src="img/dltp.png" alt=""/>
+                            </div>
+                            <div class="modal-body dlaniu">
+                               <button class="btn ml-5 mr-5">登陆</button>
+                               <a href="zhuce.html"><button class="btn">注册</button></a> 
+                            </div>
+                            <div class="modal-footer">
+                                <a class="text-dark mr-3 " href="">使用其他方式登陆</a>
+                                <a class="mr-3" href="https://music.163.com/api/sns/authorize?snsType=2&amp;clientType=web2&amp;callbackType=Login&amp;forcelogin=true"><img src="img/xina.png" alt=""/></a>
+                                <a class="mr-3" href="https://music.163.com/api/sns/authorize?snsType=10&amp;clientType=web2&amp;callbackType=Login&amp;forcelogin=true"><img src="img/wechat.png" alt=""/></a>
+                                <a class="mr-3" href="https://music.163.com/api/sns/authorize?snsType=5&amp;clientType=web2&amp;callbackType=Login&amp;forcelogin=true"><img src="img/QQ.png" alt=""/></a>
+                                <a class="text-dark" href="zhuce.html">忘记密码</a>
+                                <a class="text-dark" href="zhuce.html">免费注册</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="t5"></div>
+            </div>
+        </div>
+    </div>
+    <!-- 红色边框 -->
+    <div id="bk2">
+    </div>
+    <div class="bj">
+       <div class='dn'>
+              <img src="img/dldn.png" alt="">
+              <img src="img/dlx.png" alt="">
+              <span class="mac">MacOs</span>
+              <img src="img/dlwin.png" alt="">
+              <span class="win">Windows</span>
+              <button class="btn">下载电脑端</button>
+       </div> 
+       <div class="sj">
+              <img src="img/dlsj.png" alt="">
+              <img src="img/dlpg.png" alt="">
+              <span class="pg">iPhone</span>
+              <img src="img/dlaz.png" alt="">
+              <span class="az">Android</span>
+              <button class="btn">下载手机端</button>
+       </div>
+        <div class="dlck">
+              <h2 class="text-whild text-center mt-4">登陆</h2>
+               <div class="tzzc">
+                <span>没有账号？</span>
+                <a href="zhuce.html">立即注册</a>
+               </div>
+            <div class="dlyhm">
+                <span>用户名:</span>
+                <input type="text" id="uname" onblur="name1()" placeholder="请输入用户名/手机号/邮箱"/>
+            </div>
+            <div class="dlmm">
+                <span>密码:</span>
+                <input type="text" id="upwd" placeholder="请输入正确的密码"/>
+            </div>
+            <button onclick="login()" class="btn w-50 btn-danger">登陆</button>
+        </div>
+    </div>
+    <iframe scrolling="no" class="w-100" src="footer.html" frameborder="0"></iframe>
+    <script>
+      function login(){
+        var $uname=uname.value;
+        var $upwd=upwd.value;
+        if(!$uname ){
+            alert("用户名不能为空");
+            return;
+        }else if(!$upwd){
+            alert("密码不能为空");
+            return;
+        }
+        var xhr= new XMLHttpRequest();
+        xhr.onreadystatechange=function(){
+           if(xhr.readyState==4 && xhr.status==200){
+               var result=xhr.responseText;
+               if(result=="1"){
+                   alert("登录成功");
+									 location.href="http://127.0.0.1:8080/my.html";
+               }else{
+                   alert("登录失败");
+               }
+           }
+        }
+        xhr.open("post",`/user/v1/login`,true);
+        xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+        var formdata=`uname=${$uname}&upwd=${$upwd}`;
+        xhr.send(formdata);
+    }
+		function name1(){
+
+				var $uname=uname.value;
+				if(!$uname){
+					nm.innerHTML="用户名不能为空";
+					isReg=false;
+					return;
+					}
+				//console.log($uname);
+				var xhr=new XMLHttpRequest();
+				xhr.onreadystatechange=function(){
+					if(xhr.readyState==4&&xhr.status==200){
+							var result=xhr.responseText;
+							if(result=="1"){
+								nm.innerHTML="用户名正确";
+							}else{
+								nm.innerHTML="用户名格式错误";
+							}
+							
+					}
+				}
+				xhr.open("get",`/user/v1/reg/${$uname}`,true);
+				xhr.send();
+			}
+    </script>
+</body>
+</html>

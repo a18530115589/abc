@@ -1,0 +1,7 @@
+const express=require("express");
+var pool=require("../pool.js");
+var router=express.Router();
+router.get("reg",function(req,res){
+    res.send("1");
+});
+module.exports=router;

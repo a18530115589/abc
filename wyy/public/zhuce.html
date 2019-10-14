@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/zhuce.css">
+    <link rel="stylesheet" href="css/tp1.css"/>
+
+</head>
+<body onload="getYzm()">
+    <div id="bk">
+        <div>
+            <div class="t2">
+                <a href="index.html">网易云音乐</a>
+            </div>
+            <div class="container">
+                <div class="w1">
+                    <a href="index.html">发现音乐</a>
+                </div>
+            </div>
+            <div class="w2">
+                <span><a href="wdyy.html">我的音乐</a></span>
+            </div>
+            <div class="w3">
+                <span><a href="pengyou.html">朋友</a></span>
+            </div>
+            <div class="w4">
+                <span><a href="">商城</a></span>
+            </div>
+            <div class="w5">
+                <span><a href="">音乐人</a></span>
+            </div>
+            <div class="w6">
+                     <span>
+                         <a href="">下载客户端</a>
+                        <div class="t3"></div>
+                     </span>
+            </div>
+            <div class="k1">
+                <input type="text" placeholder="音乐/视频/电台/用户">
+                    <span>
+                   <a href=""><div class="t4"></div></a>
+                    </span>
+            </div>
+            <div class="k2">
+                <a href="">创作者中心</a>
+            </div>
+            <div class="dl">
+                <a data-target="#mymodal" data-toggle="modal" href="">登陆</a>
+                <div  id="mymodal" class="modal mt-100">
+                    <div class="modal-dialog">
+                        <div class="modal-content ">
+                            <div class="modal-header h-25 p-0 bg-back">
+                                <h6 class="text-whild text-center mt-2 ml-2">登陆</h6>
+                                <button data-dismiss="modal" class="close mr-2">&times;</button>
+                            </div>
+                            <div class="modal-body dltu">
+                                <img src="img/dltp.png" alt=""/>
+                            </div>
+                            <div class="modal-body dlaniu">
+                                <a href="denglu.html"><button class="btn ml-5 mr-5">登陆</button></a>
+                                <a href="zhuce.html"><button class="btn">注册</button></a> 
+                            </div>
+                            <div class="modal-footer">
+                                <a class="text-dark mr-3 " href="">使用其他方式登陆</a>
+                                <a class="mr-3" href="https://music.163.com/api/sns/authorize?snsType=2&amp;clientType=web2&amp;callbackType=Login&amp;forcelogin=true"><img src="img/xina.png" alt=""/></a>
+                                <a class="mr-3" href="https://music.163.com/api/sns/authorize?snsType=10&amp;clientType=web2&amp;callbackType=Login&amp;forcelogin=true"><img src="img/wechat.png" alt=""/></a>
+                                <a class="mr-3" href="https://music.163.com/api/sns/authorize?snsType=5&amp;clientType=web2&amp;callbackType=Login&amp;forcelogin=true"><img src="img/QQ.png" alt=""/></a>
+                                <a class="text-dark" href="zhuce.html">忘记密码</a>
+                                <a class="text-dark" href="zhuce.html">免费注册</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="t5"></div>
+            </div>
+        </div>
+    </div>
+    <!-- 红色边框 -->
+    <div id="bk2">
+    </div>
+    <div class="bj">
+       <div class='dn'>
+              <img src="img/dldn.png" alt="">
+              <img src="img/dlx.png" alt="">
+              <span class="mac">MacOs</span>
+              <img src="img/dlwin.png" alt="">
+              <span class="win">Windows</span>
+              <button class="btn">下载电脑端</button>
+       </div> 
+       <div class="sj">
+              <img src="img/dlsj.png" alt="">
+              <img src="img/dlpg.png" alt="">
+              <span class="pg">iPhone</span>
+              <img src="img/dlaz.png" alt="">
+              <span class="az">Android</span>
+              <button class="btn">下载手机端</button>
+       </div>
+        <div class="dlck">
+              <h2 class="text-whild text-center mt-4">注册</h2>
+            <div class="dlyhm">
+                <span>用户名:</span>
+                <input type="text" id="phone" onblur="checkUname()"  placeholder="请输入用户名/手机号/邮箱"/>
+                <span id="msg1"></span>
+            </div>
+            <div class="dlmm">
+                <span>密码:</span>
+                <input type="text" id="upwd" onblur="upwd_show()" placeholder="请输入正确的密码"/>
+                <span id="msg2">
+            </div>
+            <div class="qrmm">
+                <span>确认密码:</span>
+                <input type="text" id="upwd1" onblur="upwd1_show()" placeholder="请输入重复的密码"/>
+                <span id="msg3"></span>
+            </div>
+            <div class="yzm">
+                <input type="text" id="yzm" onblur="yz_show()" placeholder="请输入验证码"/>
+                <span id="msg4"></span>
+                <span id="sjyzm" onclick="getYzm()"></span>
+                <span id="kbq" onclick="getYzm()">&nbsp;&nbsp;&nbsp;&nbsp;看不清楚?换一张</span>
+            </div>
+            <button onclick="getReg()" class="btn w-50 btn-danger">注册</button>
+            <div class="dldb">
+                    <input type="checkbox" id="qq"/><label for="qq">我已阅读并同意《用户注册协议》</label>
+                    <span id="aaa" class="float-right">已有账号？<a href="denglu.html">立即登录</a></span>
+            </div>
+        </div>
+    </div>
+	<script>
+		function getReg(){
+			var $uname=phone.value;
+			var $upwd=upwd.value;
+			var $upwd1=upwd1.value;
+			var $phone=phone.value;
+			var $yzm=yzm.value;
+			var $sj=sjyzm.innerHTML;
+			var isC=0;
+			if(qq.checked==true){
+				isC=1;
+			}
+			if($upwd==$upwd1 && msg1.innerHTML=="当前手机号可用" && isC==1 && $yzm==$sj){
+				var xhr=new XMLHttpRequest();
+				xhr.onreadystatechange=function(){
+					if(xhr.readyState==4 && xhr.status==200){
+						var result=xhr.responseText;
+						if(result==1){
+							alert("注册成功");
+							location.href="http://127.0.0.1:8080/denglu.html";
+						}
+						else
+							alert("注册失败");
+					}
+				}
+
+			}else if(isC!=1){
+				alert("请同意《用户注册协议》");
+				return;
+			}else{
+				alert("不满足注册条件");
+				return;
+			}	
+			if(!$uname){
+				pe.innerHTML="手机号不能为空";
+				return;
+			}
+			if(!$upwd){
+				upd.innerHTML="密码不能为空";
+				return;
+			}
+			if(!yzm){
+				yz.innerHTML="验证码不能为空"
+			}
+
+			xhr.open("post","/user/api/v1/reg",true);
+			var formdata="uname="+$uname+"&upwd="+$upwd+"&phone="+$phone;
+			xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+			xhr.send(formdata);
+
+		}
+
+		function checkUname(){
+			var nm=phone.value;
+
+			if(nm==""){
+				msg1.innerHTML="电话不能为空";
+				return;
+			}else if(nm.length!=11){
+				msg1.innerHTML="手机号长度错误";
+				return;
+			}
+
+
+
+			var $phone=phone.value;
+			var xhr=new XMLHttpRequest();
+			xhr.onreadystatechange=function(){
+				if(xhr.readyState==4&&xhr.status==200){
+					var result=xhr.responseText;
+					if(result==1){
+						msg1.innerHTML="当前手机号可用";
+					}else{
+						msg1.innerHTML="当前手机号不可用";
+					}
+				}
+			};
+			xhr.open("get","/user/api/v1/isReg/"+$phone,true);
+			xhr.send();
+		}
+
+
+		function upwd_show(){
+			var $upwd=upwd.value;
+			if($upwd=='')
+				msg2.innerHTML="密码不能为空";
+			else
+				msg2.innerHTML="";
+		}
+		function upwd1_show(){
+			var $upwd=upwd.value;
+			var $upwd1=upwd1.value;
+			if($upwd1!=$upwd)
+				msg3.innerHTML="密码不同";
+			else
+				msg3.innerHTML="";
+		}
+		function yz_show(){
+			var $yz=yzm.value;
+			var $sj=sjyzm.innerHTML;
+			if($yz!=$sj){
+				msg4.innerHTML="验证码不同";
+			}else
+				msg4.innerHTML="";
+		}
+		function getYzm(){
+			var yzm=parseInt(Math.random()*8999+1000);
+			sjyzm.innerHTML=yzm;
+		}
+    </script>
+    <iframe scrolling="no" class="w-100" src="footer.html" frameborder="0"></iframe>
+</body>
+</html>

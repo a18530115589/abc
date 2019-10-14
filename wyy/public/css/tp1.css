@@ -1,0 +1,42 @@
+/*Õº∆¨µƒ…Ë÷√*/
+.bk2{
+    position: absolute;
+    width: 254px;height: 336px;
+    background:linear-gradient(to top,#23272b 25%,#4C5352 50%,#23272b 100%);
+    bottom:4px;left:1230px;
+}
+.bk2_img{
+    width: 200px; ;
+    height:150px ;
+    margin-top:50px;
+    margin-left:24px;
+}
+.bk2 a{
+    margin-top: 20px;
+    margin-left: 30px;
+    height:40px;
+}
+.font-small{
+    margin-top:30px ;
+    margin-left:15px ;
+    font-size: 12px;
+}
+.div_p_style{
+    color:#8d8d8d;
+}
+.xt1{
+    position:absolute;
+    top:140px;
+    width:34px;height:15px;
+    background-image:url(../img/icon.png);
+    background-repeat:no-repeat;
+    background-position:-32px -660px;}
+.xt2{
+    position:absolute;
+    left:130px;
+    top:60px;
+    width:25px;height:25px;
+    background-image:url(../img/icon2.png);
+    background-repeat:no-repeat;
+    background-position:-25px 0px;
+}
